@@ -114,7 +114,7 @@ if g:hybrid_use_Xresources == 1
   let s:palette.cterm.foreground = { 'dark' : "15" }  " White
   let s:palette.cterm.selection  = { 'dark' : "8" }   " DarkGrey
   let s:palette.cterm.line       = { 'dark' : "0" }   " Black
-  let s:palette.cterm.comment    = { 'dark' : "7" }   " LightGrey
+  let s:palette.cterm.comment    = { 'dark' : "8" }   " LightGrey
   let s:palette.cterm.red        = { 'dark' : "9" }   " LightRed
   let s:palette.cterm.orange     = { 'dark' : "3" }   " DarkYellow
   let s:palette.cterm.yellow     = { 'dark' : "11" }  " LightYellow
@@ -235,6 +235,7 @@ exe "let s:fmt_ital = ' gui=NONE".s:i.      " cterm=NONE".s:i.      " term=NONE"
 exe "let s:fmt_stnd = ' gui=NONE".s:s.      " cterm=NONE".s:s.      " term=NONE".s:s    ."'"
 exe "let s:fmt_revr = ' gui=NONE".s:r.      " cterm=NONE".s:r.      " term=NONE".s:r    ."'"
 exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
+exe "let s:fmt_revc = ' gui=reverse".s:r.   " cterm=reverse".s:r.   " term=reverse".s:r ."'"
 
 exe "let s:sp_none       = ' guisp=".s:none      ."'"
 exe "let s:sp_foreground = ' guisp=". s:palette.gui.foreground[s:style] ."'"
@@ -264,7 +265,7 @@ exe "let s:sp_darkpurple = ' guisp=". s:palette.gui.darkpurple[s:style] ."'"
 " ----------------------------------------------------------------------------
 exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 "   Conceal"
-"   Cursor"
+"   Cursor "
 "   CursorIM"
 exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
@@ -300,9 +301,9 @@ exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
 exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
 exe "hi! TabLine"       .s:fg_foreground  .s:bg_line        .s:fmt_none
 exe "hi! TabLineFill"   .s:fg_foreground  .s:bg_line        .s:fmt_none
-exe "hi! TabLineSel"    .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
+exe "hi! TabLineSel"    .s:fg_foreground  .s:bg_background  .s:fmt_bold
 exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
+exe "hi! Visual"        .s:fg_none        .s:bg_none        .s:fmt_revr
 "   VisualNos"
 exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
 hi LongLineWarning  guifg=NONE        guibg=#371F1C     gui=underline ctermfg=NONE        ctermbg=NONE        cterm=underline
@@ -327,7 +328,7 @@ exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
 "   Boolean"
 "   Float"
 
-exe "hi! Identifier"      .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_blue        .s:bg_none        .s:fmt_none
